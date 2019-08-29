@@ -1,0 +1,42 @@
+<body style="margin:100;padding:0">
+	
+<center>
+<h1>Wall Painting Reconstruction Using a Genetic Algorithm</h1>
+<img src="Teaser.png" alt="head" style="height:250px;" align="middle">
+
+<h2>Abstract</h2>
+<p>Global reconstruction of two-dimensional wall paintings (frescoes) from fragments is an important problem for many archaeological
+sites. The goal is to find the global position and rotation for each fragment so that all fragments jointly "reconstruct" the
+original surface (i.e., solve the puzzle). Manual fragment placement is difficult and time-consuming, especially when fragments
+are irregularly shaped and uncolored. Systems have been proposed to first acquire 3D surface scans of the fragments and then
+use computer algorithms to solve the reconstruction problem. These systems work well for small test cases and for puzzles
+with distinctive features, but fail for larger reconstructions of real wall paintings with eroded and missing fragments due to the
+complexity of the reconstruction search space. We address the search problem with an unsupervised genetic algorithm (GA):
+we evolve a pool of partial reconstructions that grow through recombination and selection over the course of generations. We
+introduce a novel algorithm for combining partial reconstructions that is robust to noise and outliers, and we provide a new selection
+procedure that balances fitness and diversity in the population. In experiments with a benchmark dataset our algorithm
+is able to achieve larger and more accurate global reconstructions than previous automatic algorithms.</p>
+</center>
+<h2>Paper</h2>
+<p><a href="https://www.cs.princeton.edu/~sizikova/">Elena Sizikova</a>, <a href="https://www.cs.princeton.edu/~funk/">Thomas Funkhouser</a><br>
+<b>Wall Painting Reconstruction Using a Genetic Algorithm. </b><br>
+EUROGRAPHICS Workshop on Graphics and Cultural Heritage (GCH) 2016. <br /> 
+<div>
+<img src="paper.png" alt="paper" style="height:400px;">
+</div>
+<br>
+<a href="http://www.cs.princeton.edu/~sizikova/files/gch16.pdf">[PDF]</a> 
+<a href="http://www.cs.princeton.edu/~sizikova/files/gch16_presentation.pdf">[Slides]</a> 
+</p>
+
+<h2>Citation</h2>
+
+<pre>
+@inproceedings{sizikova16wallpainting,
+  Author    = {Elena Sizikova, Thomas Funkhouser},
+  Title     = {Wall Painting Reconstruction Using a Genetic Algorithm},
+  Booktitle = {EUROGRAPHICS Workshop on Graphics and Cultural Heritage (GCH)},
+  Year      = {2016},
+}</pre>
+
+<body>

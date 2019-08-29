@@ -1,0 +1,434 @@
+<body style="margin:100;padding:0">
+	
+<center>
+<h1>Enhancing Place Recognition using Joint Intensity - Depth Analysis and Synthetic Data</h1>
+<img src="headline.png" alt="head" style="height:400px;" align="middle">
+
+<h2>Abstract</h2>
+<p>Visual place recognition is an important tool for robots to localize themselves in their surroundings by matching previously seen images. Recent methods based on Convolutional Neural Networks (CNN) are capable of successfully addressing the place recognition task in RGBD images. However, these methods require many aligned and annotated intensity and depth images to train joint detectors. We propose a new approach by augmenting the place recognition process with individual separate intensity and depth networks trained on synthetic data. As a result, the new approach requires only a handful of aligned RGB-D frames to achieve a competitive place recognition performance. To our knowledge, this is the rst CNN approach that integrates intensity and depth into a joint robust matching framework for place recognition and that evaluates utility of prediction from each modality.</p>
+</center>
+<h2>Paper</h2>
+<p>Elena Sizikova, Vivek K. Singh, Bogdan Georgescu, Maciej Halber, Kai Ma, and Terrence Chen. <br>
+Enhancing Place Recognition using Joint Intensity - Depth Analysis and Synthetic Data. ECCVW 2016. <br /> 
+<a href="http://www.cs.princeton.edu/~sizikova/files/eccvw16.pdf">[PDF]</a> 
+<a href="http://www.cs.princeton.edu/~sizikova/files/eccvw16_poster.pdf">[Poster]</a> 
+</p>
+<div style="text-align: center;">
+<img src="../../files/ECCVW16_Poster.png" alt="Poster" style="height:700px; border:1px solid black;" align="center">
+</div>
+<h2>Data</h2>
+<p>We release the dataset of blender trajectories and depth scans in the SceneNet rooms that were used to generate training data for this project.</p>
+
+Here is a sample visualization of a trajectory: <br>
+
+
+<div style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r7sgyvTgqsk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+<h3>Blender Files</h3>
+These files contain the original room layout, and the synthesized trajectories of camera movement as the camera follows a target around the room.
+
+<br>
+<!--b>Bathrooms</b>
+
+<table>
+<tbody>
+<tr>
+<td><a href="">bathroom1_0.blend</a></td>
+<td><a href="">bathroom1_1.blend</a></td>
+<td><a href="">bathroom1_2.blend</a></td>
+<td><a href="">bathroom1_3.blend</a></td>
+<td><a href="">bathroom2_0.blend</a></td>
+<td><a href="">bathroom2_1.blend</a></td>
+<td><a href="">bathroom2_2.blend</a></td>
+<td><a href="">bathroom2_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom3_0.blend</a></td>
+<td><a href="">bathroom3_1.blend</a></td>
+<td><a href="">bathroom3_2.blend</a></td>
+<td><a href="">bathroom3_3.blend</a></td>
+<td><a href="">bathroom4_0.blend</a></td>
+<td><a href="">bathroom4_1.blend</a></td>
+<td><a href="">bathroom4_2.blend</a></td>
+<td><a href="">bathroom4_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom5_0.blend</a></td>
+<td><a href="">bathroom5_1.blend</a></td>
+<td><a href="">bathroom5_2.blend</a></td>
+<td><a href="">bathroom5_3.blend</a></td>
+<td><a href="">bathroom6_0.blend</a></td>
+<td><a href="">bathroom6_1.blend</a></td>
+<td><a href="">bathroom6_2.blend</a></td>
+<td><a href="">bathroom6_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom7_0.blend</a></td>
+<td><a href="">bathroom7_1.blend</a></td>
+<td><a href="">bathroom7_2.blend</a></td>
+<td><a href="">bathroom7_3.blend</a></td>
+<td><a href="">bathroom8_0.blend</a></td>
+<td><a href="">bathroom8_1.blend</a></td>
+<td><a href="">bathroom8_2.blend</a></td>
+<td><a href="">bathroom8_3.blend</a></td>
+</tr>
+</tbody>
+</table>
+
+<b>Office Rooms</b>
+<table>
+<tbody>
+<tr>
+<td><a href="">office1_0.blend</a></td>
+<td><a href="">office1_1.blend</a></td>
+<td><a href="">office1_2.blend</a></td>
+<td><a href="">office1_3.blend</a></td>
+<td><a href="">office2_0.blend</a></td>
+<td><a href="">office2_1.blend</a></td>
+<td><a href="">office2_2.blend</a></td>
+<td><a href="">office2_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office3_0.blend</a></td>
+<td><a href="">office3_1.blend</a></td>
+<td><a href="">office3_2.blend</a></td>
+<td><a href="">office3_3.blend</a></td>
+<td><a href="">office4_0.blend</a></td>
+<td><a href="">office4_1.blend</a></td>
+<td><a href="">office4_2.blend</a></td>
+<td><a href="">office4_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office5_0.blend</a></td>
+<td><a href="">office5_1.blend</a></td>
+<td><a href="">office5_2.blend</a></td>
+<td><a href="">office5_3.blend</a></td>
+<td><a href="">office6_0.blend</a></td>
+<td><a href="">office6_1.blend</a></td>
+<td><a href="">office6_2.blend</a></td>
+<td><a href="">office6_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office7_0.blend</a></td>
+<td><a href="">office7_1.blend</a></td>
+<td><a href="">office7_2.blend</a></td>
+<td><a href="">office7_3.blend</a></td>
+<td><a href="">office8_0.blend</a></td>
+<td><a href="">office8_1.blend</a></td>
+<td><a href="">office8_2.blend</a></td>
+<td><a href="">office8_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office9_0.blend</a></td>
+<td><a href="">office9_1.blend</a></td>
+<td><a href="">office9_2.blend</a></td>
+<td><a href="">office9_3.blend</a></td>
+<td><a href="">office10_0.blend</a></td>
+<td><a href="">office10_1.blend</a></td>
+<td><a href="">office10_2.blend</a></td>
+<td><a href="">office10_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office11_0.blend</a></td>
+<td><a href="">office11_1.blend</a></td>
+<td><a href="">office11_2.blend</a></td>
+<td><a href="">office11_3.blend</a></td>
+<td><a href="">office12_0.blend</a></td>
+<td><a href="">office12_1.blend</a></td>
+<td><a href="">office12_2.blend</a></td>
+<td><a href="">office12_3.blend</a></td>
+</tr> 
+<tr>
+<td><a href="">office13_0.blend</a></td>
+<td><a href="">office13_1.blend</a></td>
+<td><a href="">office13_2.blend</a></td>
+<td><a href="">office13_3.blend</a></td>
+<td><a href="">office14_0.blend</a></td>
+<td><a href="">office14_1.blend</a></td>
+<td><a href="">office14_2.blend</a></td>
+<td><a href="">office14_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">office15_0.blend</a></td>
+<td><a href="">office15_1.blend</a></td>
+<td><a href="">office15_2.blend</a></td>
+<td><a href="">office15_3.blend</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+<b>Living Rooms</b>
+<table>
+<tbody>
+<tr>
+<td><a href="">living_room1_0.blend</a></td>
+<td><a href="">living_room1_1.blend</a></td>
+<td><a href="">living_room1_2.blend</a></td>
+<td><a href="">living_room1_3.blend</a></td>
+<td><a href="">living_room2_0.blend</a></td>
+<td><a href="">living_room2_1.blend</a></td>
+<td><a href="">living_room2_2.blend</a></td>
+<td><a href="">living_room2_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">living_room3_0.blend</a></td>
+<td><a href="">living_room3_1.blend</a></td>
+<td><a href="">living_room3_2.blend</a></td>
+<td><a href="">living_room3_3.blend</a></td>
+<td><a href="">living_room4_0.blend</a></td>
+<td><a href="">living_room4_1.blend</a></td>
+<td><a href="">living_room4_2.blend</a></td>
+<td><a href="">living_room4_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">living_room5_0.blend</a></td>
+<td><a href="">living_room5_1.blend</a></td>
+<td><a href="">living_room5_2.blend</a></td>
+<td><a href="">living_room5_3.blend</a></td>
+<td><a href="">living_room6_0.blend</a></td>
+<td><a href="">living_room6_1.blend</a></td>
+<td><a href="">living_room6_2.blend</a></td>
+<td><a href="">living_room6_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">living_room7_0.blend</a></td>
+<td><a href="">living_room7_1.blend</a></td>
+<td><a href="">living_room7_2.blend</a></td>
+<td><a href="">living_room7_3.blend</a></td>
+<td><a href="">living_room8_0.blend</a></td>
+<td><a href="">living_room8_1.blend</a></td>
+<td><a href="">living_room8_2.blend</a></td>
+<td><a href="">living_room8_3.blend</a></td>
+</tr>
+<tr>
+<td><a href="">living_room9_0.blend</a></td>
+<td><a href="">living_room9_1.blend</a></td>
+<td><a href="">living_room9_2.blend</a></td>
+<td><a href="">living_room9_3.blend</a></td>
+<td><a href="">living_room10_0.blend</a></td>
+<td><a href="">living_room10_1.blend</a></td>
+<td><a href="">living_room10_2.blend</a></td>
+<td><a href="">living_room10_3.blend</a></td>
+</tr>
+</tbody>
+</table-->
+
+
+
+All files: <a href="https://drive.google.com/open?id=0B3g7QyQGnRTdaFBRN0VGU0xxb2c">blends.zip</a>
+
+<h3>Poses</h3>
+Quaternion representations of poses for each of the blend files. <br>
+All files: <a href="https://drive.google.com/open?id=0B3g7QyQGnRTdaFBRN0VGU0xxb2c">poses.zip</a> [23 MB]
+
+
+
+<!--h3>Synthetic Depth</h3>
+Depth synthesized along each trajectory above.
+<br>
+<b>Bathrooms</b>
+
+<table>
+<tbody>
+<tr>
+<td><a href="">bathroom1_0.zip</a></td>
+<td><a href="">bathroom1_1.zip</a></td>
+<td><a href="">bathroom1_2.zip</a></td>
+<td><a href="">bathroom1_3.zip</a></td>
+<td><a href="">bathroom2_0.zip</a></td>
+<td><a href="">bathroom2_1.zip</a></td>
+<td><a href="">bathroom2_2.zip</a></td>
+<td><a href="">bathroom2_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom3_0.zip</a></td>
+<td><a href="">bathroom3_1.zip</a></td>
+<td><a href="">bathroom3_2.zip</a></td>
+<td><a href="">bathroom3_3.zip</a></td>
+<td><a href="">bathroom4_0.zip</a></td>
+<td><a href="">bathroom4_1.zip</a></td>
+<td><a href="">bathroom4_2.zip</a></td>
+<td><a href="">bathroom4_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom5_0.zip</a></td>
+<td><a href="">bathroom5_1.zip</a></td>
+<td><a href="">bathroom5_2.zip</a></td>
+<td><a href="">bathroom5_3.zip</a></td>
+<td><a href="">bathroom6_0.zip</a></td>
+<td><a href="">bathroom6_1.zip</a></td>
+<td><a href="">bathroom6_2.zip</a></td>
+<td><a href="">bathroom6_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">bathroom7_0.zip</a></td>
+<td><a href="">bathroom7_1.zip</a></td>
+<td><a href="">bathroom7_2.zip</a></td>
+<td><a href="">bathroom7_3.zip</a></td>
+<td><a href="">bathroom8_0.zip</a></td>
+<td><a href="">bathroom8_1.zip</a></td>
+<td><a href="">bathroom8_2.zip</a></td>
+<td><a href="">bathroom8_3.zip</a></td>
+</tr>
+</tbody>
+</table>
+
+<b>Office Rooms</b>
+<table>
+<tbody>
+<tr>
+<td><a href="">office1_0.zip</a></td>
+<td><a href="">office1_1.zip</a></td>
+<td><a href="">office1_2.zip</a></td>
+<td><a href="">office1_3.zip</a></td>
+<td><a href="">office2_0.zip</a></td>
+<td><a href="">office2_1.zip</a></td>
+<td><a href="">office2_2.zip</a></td>
+<td><a href="">office2_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office3_0.zip</a></td>
+<td><a href="">office3_1.zip</a></td>
+<td><a href="">office3_2.zip</a></td>
+<td><a href="">office3_3.zip</a></td>
+<td><a href="">office4_0.zip</a></td>
+<td><a href="">office4_1.zip</a></td>
+<td><a href="">office4_2.zip</a></td>
+<td><a href="">office4_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office5_0.zip</a></td>
+<td><a href="">office5_1.zip</a></td>
+<td><a href="">office5_2.zip</a></td>
+<td><a href="">office5_3.zip</a></td>
+<td><a href="">office6_0.zip</a></td>
+<td><a href="">office6_1.zip</a></td>
+<td><a href="">office6_2.zip</a></td>
+<td><a href="">office6_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office7_0.zip</a></td>
+<td><a href="">office7_1.zip</a></td>
+<td><a href="">office7_2.zip</a></td>
+<td><a href="">office7_3.zip</a></td>
+<td><a href="">office8_0.zip</a></td>
+<td><a href="">office8_1.zip</a></td>
+<td><a href="">office8_2.zip</a></td>
+<td><a href="">office8_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office9_0.zip</a></td>
+<td><a href="">office9_1.zip</a></td>
+<td><a href="">office9_2.zip</a></td>
+<td><a href="">office9_3.zip</a></td>
+<td><a href="">office10_0.zip</a></td>
+<td><a href="">office10_1.zip</a></td>
+<td><a href="">office10_2.zip</a></td>
+<td><a href="">office10_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office11_0.zip</a></td>
+<td><a href="">office11_1.zip</a></td>
+<td><a href="">office11_2.zip</a></td>
+<td><a href="">office11_3.zip</a></td>
+<td><a href="">office12_0.zip</a></td>
+<td><a href="">office12_1.zip</a></td>
+<td><a href="">office12_2.zip</a></td>
+<td><a href="">office12_3.zip</a></td>
+</tr> 
+<tr>
+<td><a href="">office13_0.zip</a></td>
+<td><a href="">office13_1.zip</a></td>
+<td><a href="">office13_2.zip</a></td>
+<td><a href="">office13_3.zip</a></td>
+<td><a href="">office14_0.zip</a></td>
+<td><a href="">office14_1.zip</a></td>
+<td><a href="">office14_2.zip</a></td>
+<td><a href="">office14_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">office15_0.zip</a></td>
+<td><a href="">office15_1.zip</a></td>
+<td><a href="">office15_2.zip</a></td>
+<td><a href="">office15_3.zip</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+<b>Living Rooms</b>
+<table>
+<tbody>
+<tr>
+<td><a href="">living_room1_0.zip</a></td>
+<td><a href="">living_room1_1.zip</a></td>
+<td><a href="">living_room1_2.zip</a></td>
+<td><a href="">living_room1_3.zip</a></td>
+<td><a href="">living_room2_0.zip</a></td>
+<td><a href="">living_room2_1.zip</a></td>
+<td><a href="">living_room2_2.zip</a></td>
+<td><a href="">living_room2_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">living_room3_0.zip</a></td>
+<td><a href="">living_room3_1.zip</a></td>
+<td><a href="">living_room3_2.zip</a></td>
+<td><a href="">living_room3_3.zip</a></td>
+<td><a href="">living_room4_0.zip</a></td>
+<td><a href="">living_room4_1.zip</a></td>
+<td><a href="">living_room4_2.zip</a></td>
+<td><a href="">living_room4_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">living_room5_0.zip</a></td>
+<td><a href="">living_room5_1.zip</a></td>
+<td><a href="">living_room5_2.zip</a></td>
+<td><a href="">living_room5_3.zip</a></td>
+<td><a href="">living_room6_0.zip</a></td>
+<td><a href="">living_room6_1.zip</a></td>
+<td><a href="">living_room6_2.zip</a></td>
+<td><a href="">living_room6_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">living_room7_0.zip</a></td>
+<td><a href="">living_room7_1.zip</a></td>
+<td><a href="">living_room7_2.zip</a></td>
+<td><a href="">living_room7_3.zip</a></td>
+<td><a href="">living_room8_0.zip</a></td>
+<td><a href="">living_room8_1.zip</a></td>
+<td><a href="">living_room8_2.zip</a></td>
+<td><a href="">living_room8_3.zip</a></td>
+</tr>
+<tr>
+<td><a href="">living_room9_0.zip</a></td>
+<td><a href="">living_room9_1.zip</a></td>
+<td><a href="">living_room9_2.zip</a></td>
+<td><a href="">living_room9_3.zip</a></td>
+<td><a href="">living_room10_0.zip</a></td>
+<td><a href="">living_room10_1.zip</a></td>
+<td><a href="">living_room10_2.zip</a></td>
+<td><a href="">living_room10_3.zip</a></td>
+</tr>
+</tbody>
+</table-->
+
+<br>
+All files:[coming soon]
+
+<!--pre>
+@inproceedings{sizikova16syntheticdepth,
+  Author    = {Elena Sizikova, Vivek K. Singh, Bogdan Georgescu, Maciej Halber, Kai Ma, and Terrence Chen},
+  Title     = {Enhancing Place Recognition using Joint Intensity - Depth Analysis and Synthetic Data},
+  Booktitle = {European Conference on Computer Vision, VARVAI},
+  Year      = {2016},
+}</pre-->
+
+<body>
