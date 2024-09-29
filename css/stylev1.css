@@ -54,15 +54,41 @@ body h6 {
 }
 
 
+@media screen and (max-width: 768px) {
+  .column{
+    width:100%
+  }
+}
 body .pic-round-corner {
-float:left;
-display: block;
-width: 200px;
-margin: .8em auto;
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center center;
-border-radius: 5px;
+  float: left; /* Consider using flexbox or grid for better responsiveness */
+  display: block;
+  width: 100%; /* Set width to 100% for responsiveness */
+  max-width: 200px; /* Maximum width to maintain original size */
+  margin: .8em auto; /* Center the element with auto margins */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding (if added) is included in width */
+}
+
+/* Optional: Media Queries for further customization */
+@media (max-width: 600px) {
+  body .pic-round-corner {
+    /* Adjust any properties if needed for smaller screens */
+    margin: 0.5em auto; /* Modify margin for smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  body .pic-round-corner {
+    /* Further adjustments for very small screens */
+    max-width: 100%; /* Ensure it takes full width on very small screens */
+  }
+}
+body .pic-publication {
+max-width: 100%;
+height: auto;
 }
 body section {
   padding-top: 0px;
@@ -78,7 +104,58 @@ body .hero-unit {
   background: transparent;
   border: #ccc 1px solid;
   overflow: hidden; 
+  width: 100%;
+  min-width: 320px;
+  max-width: 100%;
+  
+  min-width: 320px;
+  max-width: 100%;
+  padding: 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in width */
+
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 0px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Media query for small screens */
+@media (max-width: 400px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: left;
+        position: relative;
+        padding-left: 10%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-left: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+        
+}
+
+
+body .res
 
 body .description{
   font-size: 15px;
